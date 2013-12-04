@@ -23,6 +23,10 @@ Library.prototype.getServerUrl = function() {
 	return localStorage.getItem("serverUrl");    
 };
 
+Library.prototype.getServerPort = function() {
+	return localStorage.getItem("serverUrl").substr(localStorage.getItem("serverUrl").lastIndexOf(":")+1);    
+};
+
 Library.prototype.removeServerUrl = function() {
 	localStorage.removeItem("serverUrl");    
 };
@@ -72,7 +76,7 @@ Library.prototype.hideFilter = function() {
 };
 
 
-/* Movie functions */
+/* Media library functions */
 Library.prototype.getSections = function(callback) {
 	$.get(this.getServerUrl() + "/library/sections", callback);
 };
@@ -108,4 +112,37 @@ Library.prototype.getMediaItem = function(id, callback) {
 Library.prototype.getChildrenMediaItems = function(id, callback) {
 	var url = this.getServerUrl() + "/library/metadata/" + id + "/children";	
 	$.get(url, callback);
+};
+
+/* HTML output functions */
+Library.prototype.getVideoThumbHtml = function(xml) {
+
+};
+
+Library.prototype.getMusicThumbHtml = function(xml) {
+
+};
+
+Library.prototype.getPhotoThumbHtml = function(xml) {
+
+};
+
+Library.prototype.getFolderThumbHtml = function(xml) {
+
+};
+
+Library.prototype.getCategoryThumbHtml = function(xml) {
+
+};
+
+Library.prototype.getFilterOptionHtml = function(xml) {
+
+};
+
+Library.prototype.getVideoItemHtml = function(xml) {
+
+};
+
+Library.prototype.getMusicItemHtml = function(xml) {
+
 };

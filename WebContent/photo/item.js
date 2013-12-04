@@ -11,7 +11,7 @@ $(document).ready(function() {
 	
 	library.showLoader("Loading ...");
 	library.getMediaItem($.querystring().key, function(xml) {
-		$("#application").append("<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(xml).find("Part:first").attr("key")) + "&width=1260&height=700\"/>");
+		$("#application").append("<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(xml).find("Part:first").attr("key")) + "&width=1260&height=700\"/>");
 		library.hideLoader();
 	});
 });

@@ -44,7 +44,7 @@ function displayMovies()
 						html = "<a data-index=\"" + x + "_" + (y+1) + "\" class=\"itemLink photoLink\" href=\"index.html?key=" + $.querystring().key + "&childrenKey=" + $(this).attr("ratingKey") + "\">";
 					}
 					html += "<div class=\"item\">";
-					html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=250&height=200\"></div>";
+					html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(this).attr("thumb")) + "&width=250&height=200\"></div>";
 					html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
 					html += "</div>";
 					html += "</a>";

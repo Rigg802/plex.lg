@@ -39,7 +39,7 @@ function displayMovies()
 			html = "<table class=\"_details\">";
 			html += "<tr>";
 			html += "<td class=\"_poster\">";
-			html += "<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $item.attr("thumb")) + "&width=256&height=420\"/>";
+			html += "<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $item.attr("thumb")) + "&width=256&height=420\"/>";
 			html += "<a data-index=\"0_1\" class=\"playItem movie\" href=\"" + library.getServerUrl() + $($item).find("Part:first").attr("key") + "\"><i class=\"glyphicon play\"></i>Play</a>";
 			html += "</td>";
 			html += "<td class=\"_info\">";	
@@ -61,7 +61,7 @@ function displayMovies()
 			}
 			
 			if ($item.attr("summary")) {
-				html += "<div class=\"_rating\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + "/system/bundle/media/flags/contentRating/" + $item.attr("contentRating") + "?t=1234") + "&width=70&height=25" + "\"/></div>";
+				html += "<div class=\"_rating\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + "/system/bundle/media/flags/contentRating/" + $item.attr("contentRating") + "?t=1234") + "&width=70&height=25" + "\"/></div>";
 			}
 			
 			if ($($item).find("Director:first").attr("tag") > 0) {
@@ -76,7 +76,7 @@ function displayMovies()
 			}
 			
 			if ($item.attr("studio")) {
-				html += "<div class=\"_studio\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + "/system/bundle/media/flags/studio/" + $item.attr("studio") + "?t=1234") + "&width=200&height=40" + "\"/></div>";
+				html += "<div class=\"_studio\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + "/system/bundle/media/flags/studio/" + $item.attr("studio") + "?t=1234") + "&width=200&height=40" + "\"/></div>";
 			}			
 			html += "</td>";
 			html += "</tr>";

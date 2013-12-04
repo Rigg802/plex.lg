@@ -42,7 +42,7 @@ function displayMovies()
 					if ($(this).context.nodeName.toLowerCase() == "video") {					
 						html = "<a data-index=\"" + x + "_" + (y+1) + "\" class=\"" + className + "\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "\">";
 						html += "<div class=\"item\">";
-						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
+						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
 						html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
 						html += "</div>";
 						html += "</a>";
@@ -79,7 +79,7 @@ function displayMovies()
 						var x = index - (y*7);
 						html = "<a data-index=\"" + x + "_" + (y+1) + "\" class=\"itemLink\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "\">";
 						html += "<div class=\"item\">";
-						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
+						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
 						html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
 						html += "</div>";
 						html += "</a>";							
@@ -115,7 +115,7 @@ function displayMovies()
 					
 					html = "<a data-index=\"" + x + "_" + (y+1) + "\" class=\"" + className + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "\">";
 					html += "<div class=\"item\">";
-					html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
+					html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
 					html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
 					html += "</div>";
 					html += "</a>";

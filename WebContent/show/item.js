@@ -50,7 +50,7 @@ function displayShows()
 			html = "<table class=\"_details\">";
 			html += "<tr>";
 			html += "<td class=\"_poster\">";
-			html += "<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $item.attr("thumb")) + "&width=256&height=420\"/>";
+			html += "<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $item.attr("thumb")) + "&width=256&height=420\"/>";
 			
 			if ($($item).find("Part:first").length > 0) {
 				html += "<a data-index=\"0_1\" class=\"playItem show\" href=\"" + library.getServerUrl() + $($item).find("Part:first").attr("key") + "\"><i class=\"glyphicon play\">Play</i></a>";
@@ -77,7 +77,7 @@ function displayShows()
 			}
 			
 			if ($item.attr("contentRating")) {
-				html += "<div class=\"_rating\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + "/system/bundle/media/flags/contentRating/" + $item.attr("contentRating") + "?t=1234") + "&width=30&height=60" + "\"/></div>";
+				html += "<div class=\"_rating\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + "/system/bundle/media/flags/contentRating/" + $item.attr("contentRating") + "?t=1234") + "&width=30&height=60" + "\"/></div>";
 			}
 			
 			if ($($item).find("Role").length > 0)	{					
@@ -88,7 +88,7 @@ function displayShows()
 			}
 			
 			if ($item.attr("studio")) {
-				html += "<div class=\"_studio\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + "/system/bundle/media/flags/studio/" + $item.attr("studio") + "?t=1234") + "&width=200&height=40" + "\"/></div>";
+				html += "<div class=\"_studio\"><img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + "/system/bundle/media/flags/studio/" + $item.attr("studio") + "?t=1234") + "&width=200&height=40" + "\"/></div>";
 			}
 			
 			html += "<div id=\"series\"></div>";
@@ -110,7 +110,7 @@ function displayShows()
 
 						html = "<a data-index=\"" + x + "_" + (y+1) + "\" class=\"itemLink showLink\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + sectionId + "\">";
 						html += "<div class=\"item\">";
-						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=200&height=200\"></div>";
+						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(this).attr("thumb")) + "&width=200&height=200\"></div>";
 						html += "<div class=\"title\">" + $(this).attr("index") + ". " + $(this).attr("title") + "</div>";
 						html += "</div>";
 						html += "</a>";
@@ -122,7 +122,7 @@ function displayShows()
 							html = "<a data-index=\"" + x + "_" + (y+1) + "\" class=\"itemLink\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + sectionId + "\">";
 							html += "<div class=\"item\">";
 							if ($(this).attr("thumb")) {
-								html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
+								html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $(this).attr("thumb")) + "&width=128&height=200\"></div>";
 							} else {
 								html += "<div class=\"poster\"><img data-original=\"../system/images/folder.png\"></div>";
 							}

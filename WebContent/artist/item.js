@@ -50,7 +50,7 @@ function displayShows()
 			html = "<table class=\"_details\">";
 			html += "<tr>";
 			html += "<td class=\"_poster\">";
-			html += "<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $item.attr("thumb")) + "&width=256&height=420\"/>";
+			html += "<img src=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent("http://localhost:" + library.getServerPort() + $item.attr("thumb")) + "&width=256&height=420\"/>";
 			
 			if ($($item).find("Part:first").length > 0) {
 				html += "<a class=\"play show\" href=\"" + library.getServerUrl() + $($item).find("Part:first").attr("key") + "\"><i class=\"glyphicon play\">Play</i></a>";
