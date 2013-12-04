@@ -72,7 +72,14 @@ function displayMovies()
 			library.getSectionCategoryItems($.querystring().key, $.querystring().category, function(xml) {	
 				$("#title").text($(xml).find("MediaContainer:first").attr("title1") + ": " + $(xml).find("MediaContainer:first").attr("title2"));						
 				$(xml).find("Video,Directory").each(function(index, item) {
-					var key2 = ($.querystring().category == "folder") ? $(this).attr("key").substr($(this).attr("key").indexOf("=")+1) : $(this).attr("key");
+					var key2 = "";
+					if ($.querystring().category == "folder") {
+						key2 = $(this).attr("key").substr($(this).attr("key").indexOf("=")+1); 
+					} else if ($.querystring().category == "unwatched") {
+						key2 = $(this).attr("ratingKey");
+					} else {
+						key2 = $(this).attr("key");
+					}
 					
 					if ($(this).context.nodeName.toLowerCase() == "video") {
 						var y = Math.floor(index/7);							

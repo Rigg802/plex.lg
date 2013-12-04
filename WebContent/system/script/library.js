@@ -101,6 +101,9 @@ Library.prototype.getSectionCategoryMediaItems = function(id, category, category
 	if (category == "folder") {
 		url = this.getServerUrl() + "/library/sections/" + id + "/" + category + "?parent=" + categoryId;
 	} 
+	if (category == "unwatched") {
+		url = this.getServerUrl() + "/library/metadata/" + categoryId + "/children?unwatched=1";
+	} 
 	$.get(url, callback);
 };
 
