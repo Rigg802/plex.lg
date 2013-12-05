@@ -25,7 +25,11 @@
 	<div id="applicationBackground"></div>
 	
 	<div id="application">	
-		<div id="server">Server<a data-index="0_-1" title="Settings" href="javascript:library.hideLoader(); library.showDialog('#configuration');"><i class="glyphicon cogwheels"></i></a></div>
+		<div id="time"></div>
+		<div id="server"><span id="serverName">Server</span>
+			<a data-index="0_-1" title="Settings" href="javascript:openConfiguration();"><i class="glyphicon cogwheels"></i></a>
+			<a data-index="1_-1" title="Exit" href="javascript:exitApplication();"><i class="glyphicon exit"></i></a>
+		</div>
 		<div id="sectionsStrip" style="display: none;"></div>
 		<div id="sections" style="display: none;"></div>
 	</div>
@@ -34,7 +38,7 @@
 		<div class="title">Initial Library Setup</div>
 		<div class="content">
 			<p>Please enter your PLEX Media Server URL below</p>
-			<form><input type="text" name="url" id="url" value="http://192.168.0.3:32400" required="required" placeholder="i.e. http://1.1.1.1:32400"></form>
+			<form><input type="url" name="url" id="url" value="http://192.168.0.3:32400" required="required" placeholder="i.e. http://1.1.1.1:32400"></form>
 		</div>
 		<div class="action"><input type="button" name="scan" id="scan" value="Scan Network"><input type="button" name="save" id="save" value="Save"></div>
 	</div>

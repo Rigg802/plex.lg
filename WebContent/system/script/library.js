@@ -37,6 +37,9 @@ Library.prototype.getLibraryServer = function(callback) {
 
 Library.prototype.showDialog = function(ref) {
 	$(ref).fadeIn();
+	if (window.NetCastSystemKeyboardVisible) {
+		window.NetCastSystemKeyboardVisible(true);
+	}
 };
 
 Library.prototype.hideDialog = function(ref) {
@@ -56,10 +59,16 @@ Library.prototype.scanNetwork = function(ip, callback) {
 Library.prototype.showLoader = function(message) {
 	$("#message").text(message);
 	$("#loader").show();
+	if (window.NetCastSetPageLoadingIcon) {
+		window.NetCastSetPageLoadingIcon('enabled');	
+	}
 };
 
 Library.prototype.hideLoader = function() {
 	$("#loader").hide();
+	if (window.NetCastSetPageLoadingIcon) {
+		window.NetCastSetPageLoadingIcon('disabled');	
+	}
 };
 
 /* Filter functions */

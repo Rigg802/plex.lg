@@ -7,11 +7,18 @@ $(document).unload(library.showLoader("Loading ..."));
 				
 $(document).ready(function() {
 	var device = document.getElementById("device");
-			
+	showTime();
+	$("#configuration form").submit(function() {
+		event.preventDefault();		
+		library.setServerUrl($("#url").val());
+		library.hideDialog("#configuration");
+		$("#splash").fadeOut(1500, displaySections);		
+	});
+	
 	if (library.getServerUrl() !== null) {
 		library.showLoader("Loading ...");
 		library.getLibraryServer(function(xml) {
-			$("#server").html($($(xml).find("MediaContainer")[0]).attr("friendlyName") + "<a data-index=\"0_-1\" title=\"Settings\" href=\"javascript:library.showDialog('#configuration');\"><i class=\"glyphicon cogwheels\"></i></a>");
+			$("#serverName").text($($(xml).find("MediaContainer")[0]).attr("friendlyName"));
 			$("#url").val(library.getServerUrl());
 			library.hideLoader();
 			$("#splash").hide();
@@ -19,8 +26,7 @@ $(document).ready(function() {
 			displaySections();
 		});
 	} else {
-		library.showDialog("#configuration");
-		$("#url").focus();
+		openConfiguration();
 	}
 	
 	$("#scan").click(function(event) {
@@ -33,6 +39,7 @@ $(document).ready(function() {
 	});
 	
 	$("#save").click(function(event) {
+		event.preventDefault();
 		library.setServerUrl($("#url").val());
 		library.hideDialog("#configuration");
 		$("#splash").fadeOut(1500, displaySections);
@@ -64,8 +71,40 @@ function displaySections()
 		});	
 			
 		library.hideLoader();	
-		$(document).arrowNavigation();
+		$("a").arrowNavigation();
 		$("#sections, #sectionsStrip").show();
 		$(".section:first").focus();		
 	});
+}
+
+function openConfiguration()
+{
+	library.hideLoader(); 
+	library.showDialog('#configuration');	
+	$("#url").focus();	
+	//$(document).off();	
+}
+
+function exitApplication()
+{
+	if (window.NetCastBack) {
+		window.NetCastBack();	
+	} else {
+		window.close();
+	}
+}
+
+function showTime()
+{
+	var now=new Date();
+	$("#time").text(now.toLocaleTimeString());
+	t = setTimeout(showTime,500);
+}
+
+function checkTime(i)
+{
+	if (i<10) {
+		i="0" + i;
+	}
+	return i;
 }

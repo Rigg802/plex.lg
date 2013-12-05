@@ -149,6 +149,15 @@ body {
 	color: #ff9d00;
 }
 
+#time {
+	position: absolute;
+	left: 32px;	
+	top: 32px;
+	width: 300px;
+	text-align: left;
+	color: #fff;	
+}
+
 #server {
 	position: absolute;
 	right: 32px;	
@@ -160,19 +169,29 @@ body {
 
 #server .glyphicon {
 	color: #fff;
-	margin-left: 10px;
-	margin-right: 5px;	
+	margin-left: 2px;
+	margin-right: 2px;	
 }
 
-#server a * {
+#serverName {
+	display: inline-block;
+	padding-right: 10px;	
+}
+
+#server a {
+	display: inline-block;
 	outline: none;
 }
 
-#server a:hover * {
+#server a i:before {
+	width: 1.5em;
+}
+
+#server a:hover i {
 	color: #fc3;
 }
 
-#server a:focus * {
+#server a:focus i {
 	color: #fc3;
 }
 
