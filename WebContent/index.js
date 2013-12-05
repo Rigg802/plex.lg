@@ -52,7 +52,7 @@ function displaySections()
 	$("#sections").html("");
 	library.getSections(function(xml) {
 		$(xml).find("Directory").each(function(index, item) {
-			html = "<a data-index=\"" + index + "_0\" class=\"section\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"" + $(this).attr("type") + "/index.html?key=" + $(this).attr("key") + "\">";
+			html = "<a data-index=\"" + index + "_1\" class=\"section\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"" + $(this).attr("type") + "/index.html?key=" + $(this).attr("key") + "\">";
 			html += "<div class=\"item\">";
 			html += "<img class=\"poster\" src=\"" + library.getServerUrl()+ $(this).attr("thumb") + "\">";
 			html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
