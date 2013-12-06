@@ -84,6 +84,13 @@ Library.prototype.hideFilter = function() {
 	$("#sectionFilter").hide();
 };
 
+Library.prototype.setFilter = function(key, filter) {
+	localStorage.setItem(key+"Filter", filter);
+};
+
+Library.prototype.getFilter = function(key) {
+	return localStorage.getItem(key+"Filter");
+};
 
 /* Media library functions */
 Library.prototype.getSections = function(callback) {
