@@ -10,6 +10,9 @@ $(document).ready(function() {
 	$(".menuBar li a").tooltipster();
 	displayArtists();
 	$(document).arrowNavigation();			
+	if ($.querystring().category) {
+		library.setFilter($.querystring().key, $.querystring().category); // save the category if there is one
+	}
 });
 
 function displayArtists()
