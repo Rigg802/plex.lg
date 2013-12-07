@@ -52,7 +52,11 @@ function displaySections()
 	$("#sections").html("");
 	library.getSections(function(xml) {
 		$(xml).find("Directory").each(function(index, item) {
-			html = "<a data-index=\"" + index + "_1\" class=\"section\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"" + $(this).attr("type") + "/index.html?key=" + $(this).attr("key") + "\">";
+			var categoryFilter = "all";
+			if (library.getFilter($(this).attr("key"))) {
+				categoryFilter = library.getFilter($(this).attr("key")); // get the category if there is one
+			}
+			html = "<a data-index=\"" + index + "_1\" class=\"section\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"" + $(this).attr("type") + "/index.html?key=" + $(this).attr("key") + "&category=" + categoryFilter + "\">";
 			html += "<div class=\"item\">";
 			html += "<img class=\"poster\" src=\"" + library.getServerUrl()+ $(this).attr("thumb") + "\">";
 			html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
