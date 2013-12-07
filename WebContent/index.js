@@ -4,7 +4,7 @@
 
 var library = new Library();
 $(document).unload(library.showLoader("Loading ..."));
-				
+
 $(document).ready(function() {
 	var device = document.getElementById("device");
 	showTime();
@@ -80,8 +80,9 @@ function displaySections()
 function openConfiguration()
 {
 	library.hideLoader(); 
-	library.showDialog('#configuration');	
-	$("#url").focus();	
+	library.showDialog('#configuration');
+	$('#configuration').configArrowNavigation();
+	$('#url').focus();	
 	//$(document).off();	
 }
 

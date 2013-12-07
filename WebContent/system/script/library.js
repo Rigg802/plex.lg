@@ -37,9 +37,11 @@ Library.prototype.getLibraryServer = function(callback) {
 
 Library.prototype.showDialog = function(ref) {
 	$(ref).fadeIn();
+	/*
 	if (window.NetCastSystemKeyboardVisible) {
 		window.NetCastSystemKeyboardVisible(true);
 	}
+	*/
 };
 
 Library.prototype.hideDialog = function(ref) {
