@@ -100,15 +100,12 @@ function exitApplication()
 
 function showTime()
 {
-	var now=new Date();
-	$("#time").text(now.toLocaleTimeString());
-	t = setTimeout(showTime,500);
-}
-
-function checkTime(i)
-{
-	if (i<10) {
-		i="0" + i;
-	}
-	return i;
+	var now = device.getLocalTime();
+	var hours = now.hour;
+	var minutes = now.minute;
+	var ampm = hours >= 12 ? 'PM' : 'AM';
+	hours = hours % 12;
+	hours = hours ? hours : 12; // hour '0' should be '12'
+	minutes = minutes < 10 ? '0'+minutes : minutes;
+	$("#time").text(hours + ':' + minutes + ' ' + ampm);
 }
