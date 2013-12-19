@@ -130,8 +130,12 @@ Library.prototype.getMediaItem = function(id, callback) {
 	$.get(url, callback);
 };
 
-Library.prototype.getChildrenMediaItems = function(id, callback) {
-	var url = this.getServerUrl() + "/library/metadata/" + id + "/children";	
+Library.prototype.getChildrenMediaItems = function(id, category, callback) {
+	if (category == "unwatched") {
+		var url = this.getServerUrl() + "/library/metadata/" + id + "/children?unwatched=1";
+	} else {
+		var url = this.getServerUrl() + "/library/metadata/" + id + "/children";	
+	}
 	$.get(url, callback);
 };
 
