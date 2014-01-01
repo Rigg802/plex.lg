@@ -1,7 +1,7 @@
 plex.lg
 =======
 
-Note: Depreciate no longer actively maintained ...
+Note: Depreciated no longer actively maintained ...
 
 PLEX client for LG Smart TV (2013)
 
