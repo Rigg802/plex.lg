@@ -98,7 +98,7 @@ function displayShows()
 			
 			$("#media").append(html);
 
-			library.getChildrenMediaItems($.querystring().key, function(xml) {
+			library.getChildrenMediaItems($.querystring().key, $.querystring().category, function(xml) {
 				sectionId = $(xml).find("MediaContainer:first").attr("librarySectionID");
 				
 				$(xml).find("Directory,Video").each(function(index, item) {

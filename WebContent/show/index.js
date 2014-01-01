@@ -44,7 +44,7 @@ function displayMovies()
 					if ($(this).attr("thumb")) {
 						var className = ($.querystring().category == "folder") ? "itemLink showLink" : "itemLink";
 											
-						html = "<a data-index=\"" +  x + "_" + (y+1) + "\" class=\"" + className + "\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "\">";
+						html = "<a data-index=\"" +  x + "_" + (y+1) + "\" class=\"" + className + "\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "&category=" + $.querystring().category +  "\">";
 						html += "<div class=\"item\">";
 						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=200&height=200\"></div>";
 						html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
@@ -88,7 +88,7 @@ function displayMovies()
 						var y = Math.floor(index/7);							
 						var x = index - (y*7);
 						
-						html = "<a data-index=\"" +  x + "_" + (y+1) + "\" class=\"itemLink showLink\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "\">";
+						html = "<a data-index=\"" +  x + "_" + (y+1) + "\" class=\"itemLink showLink\" data-art=\"" + library.getServerUrl() + $(this).attr("art") + "\" href=\"item.html?key=" + $(this).attr("ratingKey") + "&parentKey=" + $.querystring().key + "&category=" + $.querystring().category + "\">";
 						html += "<div class=\"item\">";
 						html += "<div class=\"poster\"><img data-original=\"" + library.getServerUrl() + "/photo/:/transcode?url=" + encodeURIComponent(library.getServerUrl() + $(this).attr("thumb")) + "&width=200&height=200\"></div>";
 						html += "<div class=\"title\">" + $(this).attr("title") + "</div>";
